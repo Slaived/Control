@@ -33,16 +33,12 @@ public class Control {
         }
     }
     public void separar(){
-  String contenido = v.getjTextArea1().getText();
-    // Limpiar el JTextArea donde mostraremos el resultado
-    v.getjTextArea3().setText("");
-    // Expresión regular para encontrar identificadores de variables y números
+  String contenido = v.getjTextArea1().getText();    
+    v.getjTextArea3().setText("");    
     Pattern pattern = Pattern.compile("\\b[a-zA-Z_]\\w*\\b|\\b\\d+\\b");
     Matcher matcher = pattern.matcher(contenido);
-    while (matcher.find()) {
-        // Obtener el identificador o número encontrado
-        String token = matcher.group();
-        // Mostrar el token en el JTextArea
+    while (matcher.find()) {        
+        String token = matcher.group();        
         v.getjTextArea3().append(token + "\n");
     }
 }
